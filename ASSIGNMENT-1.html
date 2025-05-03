@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All-in-One Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    section {
+      display: none;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #667eea, #764ba2);
+    }
+    .login-box {
+      background-color: #ffffff10;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000030;
+      text-align: center;
+      color: white;
+    }
+    .login-box input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    .login-box button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #home {
+      background: linear-gradient(to right, #7fffd4, #add8e6);
+      text-align: center;
+    }
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 20px;
+    }
+    footer {
+      text-align: center;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px;
+    }
+    #about {
+      background: #fff;
+    }
+    table, th, td {
+      border: 1px solid lightgray;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      color: blue;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<section id="login" style="display: flex;">
+  <div class="login-box">
+    <h2>Welcome</h2>
+    <label>Username</label>
+    <input type="text" id="username">
+    <label>Password</label>
+    <input type="password" id="password">
+    <button onclick="showSection('home')">Login</button>
+  </div>
+</section>
+
+<section id="home">
+  <header>
+    <h1>Hi, I’m Alex</h1>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('about')">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <div>
+    <h2>Creative Web Explorer</h2>
+    <p>I build clean, modern, responsive websites.</p>
+  </div>
+  <footer>
+    © 2025 Alex's Portfolio
+  </footer>
+</section>
+
+<section id="about">
+  <h2>HTML Concepts</h2>
+  <h3>Lists</h3>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <h3>Table</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td>Alex</td>
+      <td>Developer</td>
+    </tr>
+  </table>
+  <h3>Image</h3>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpEM5g4gVUDZvf6y9x0TDXbkRR1vNagGii3A&s" alt="Image">
+  <br>
+  <span class="back-link" onclick="showSection('home')">← Back Home</span>
+</section>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+    document.getElementById(id).style.display = id === "login" ? "flex" : "block";
+  }
+</script>
+
+</body>
+</html>
